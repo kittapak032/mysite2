@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -20,18 +21,15 @@
     </div>
   </div>
 </div>
-
 <!-- Page content -->
-<div class="w3-content w3-padding-64 w3-animate-top" style="max-width:1564px">
+<div class="w3-content w3-padding-64 w3-margin-top" style="max-width:1564px">
 
 <h1>API</h1>
-  
 
 <hr>
 <h2>Click to change</h2>
 <p id="demo2">Hi</p>
-<button onclick="myFuncion()">Click Me</button>
-
+<button onclick="myFunction()">Click me</button>
 
 <!-- End page content -->
 </div>
@@ -41,26 +39,26 @@
 </footer>
 
 <script>
-  // document.getElementById("demo").innerHTML = "Hello World";
-
+  //document.getElementById("demo").innerHTML = "Hello World";
 
 
   function myFunction() {
     fetch("https://catfact.ninja/fact")
-     .then(function(response){
-    return response.jason()
-  })
-  .then(function(data){
-    let txt = "";
-    for (let x in data) {
-      txt += data[x] + "";
-      document.getElementById("demo2").innerHTML = txt;
-    };
+      .then(function(response){
+        return response.json()
+      })
+      .then(function(data){
+        let txt = "";
+          for (let x in data) {
+            txt += data[x] + " ";
+          document.getElementById("demo2").innerHTML = txt;
+          };
 
-    return data;
-  })
-  }
+        return data;
+      })
 
+ 
+}
 
 
 </script>
